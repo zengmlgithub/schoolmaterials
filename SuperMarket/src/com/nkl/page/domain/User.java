@@ -140,4 +140,9 @@ public class User extends BaseDomain {
 		this.user_types = user_types;
 	}
 
+	@Override
+	public String toString() {
+		return "User[name:" + user_name + ",pwd:" + user_pass + "]";
+	}
+	
 }

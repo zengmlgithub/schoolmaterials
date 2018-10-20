@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.nkl.common.dao.BaseDao;
 import com.nkl.common.util.StringUtil;
 import com.nkl.page.domain.User;
@@ -109,6 +111,8 @@ public class UserDao {
 		if (list != null && list.size() > 0) {
 			 _user = (User)list.get(0);
 		}
+		Logger logger = Logger.getLogger(UserDao.class);
+		logger.info("get User:" + _user.toString());
 		return _user;
 	}
 

@@ -113,9 +113,10 @@ public class BaseDao {
 					result = ResultSupport.toResult(rs); // 将结果集保存在Result中
 				}
 			}
+			log.info("get result:" + result);
 			return result;
 		} catch (SQLException e) {
-			log.error("BaseDao执行execute异常：", e);
+			log.info("BaseDao执行execute异常：", e);
 			throw new RuntimeException("BaseDao执行execute异常：", e);
 		} finally {
 			closeDB(rs, pstmt, null);
@@ -217,22 +218,25 @@ public class BaseDao {
 	 */
 	public static List<Object> executeQuery(String className,String sql, Object[] params,Connection conn)
 	{
-	    PreparedStatement pstmt=null;
+		log.info("executeQuery");	
+		PreparedStatement pstmt=null;
 	    ResultSet rs=null;
 		try 
 		{
 			pstmt = conn.prepareStatement(sql);  // 得到PreparedStatement对象				
 			setParam(params,pstmt);  //设置参数				
-			rs = pstmt.executeQuery();  //获取结果集						
+			rs = pstmt.executeQuery();  //获取结果集	
+			log.info("rs:" + rs);	
 			return getEntityListByInvoke(className, rs);  //返回结果集
 		} 
-		catch (SQLException e) 
+		catch (Exception e) 
 		{
-			log.debug("Basedao执行executeQuery异常：",e);		 
+			log.info("Basedao执行executeQuery异常：",e);		 
 			throw new RuntimeException("BaseDao执行executeQuery异常：", e);
 		}
 		finally
 		{
+			log.info("close db");	
 			 closeDB(rs,pstmt,null);  // 释放资源
 		}
 	}

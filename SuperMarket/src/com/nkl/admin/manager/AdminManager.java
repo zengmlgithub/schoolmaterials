@@ -3,6 +3,8 @@ package com.nkl.admin.manager;
 import java.sql.Connection;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.nkl.common.dao.BaseDao;
 import com.nkl.common.util.Md5;
 import com.nkl.common.util.StringUtil;
@@ -50,6 +52,8 @@ public class AdminManager {
 	 */
 	public User  getUser(User user){
 		Connection conn = BaseDao.getConnection();
+		Logger logger = Logger.getLogger(AdminManager.class);
+		logger.info("conn:" + conn);
 		User _user = userDao.getUser(user, conn);
 		BaseDao.closeDB(null, null, conn);
 		return _user;
