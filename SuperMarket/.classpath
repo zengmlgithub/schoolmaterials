@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.struts2.MYECLIPSE_STRUTS21_CORE"/>
 	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_5_CONTAINER"/>
@@ -17,5 +17,32 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="com.genuitec.runtime.library/com.genuitec.generic_5.0"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/activation.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/antlr.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/commons-collections-3.2.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/commons-dbcp-1.2.2.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/commons-digester.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/commons-fileupload.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/commons-jexl-2.1.1.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/commons-jwn.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/commons-pool-1.1.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/commons-validator.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/jakarta-oro.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/jxl-2.6.6.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/jxls-core-1.0.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/jxls-reader-1.0.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/mysql-connector-java-5.0.4-bin.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/poi-3.8-20120326.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/poi-examples-3.8-20120326.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/poi-excelant-3.8-20120326.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/poi-ooxml-3.8-20120326.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/poi-ooxml-schemas-3.8-20120326.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/poi-scratchpad-3.8-20120326.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/SmartUpload.jar"/>
+	<classpathentry kind="lib" path="D:/智慧校园/项目/超市管理系统/超市管理系统180505/超市管理系统180505/程序/项目源码/SuperMarket/SuperMarket/WebRoot/WEB-INF/lib/standard.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

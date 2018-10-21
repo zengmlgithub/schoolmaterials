@@ -103,6 +103,6 @@ CREATE TABLE `user`  (
 
 SET FOREIGN_KEY_CHECKS = 1;
 
-insert into `user` (user_name,user_pass,real_name,user_sex，user_age,user_mail,reg_date,user_type) values('admin','9fc0a0555e4f857f874da29c9790695cd110cb4e','admin',1,18,'admin@sany.com.cn','2016-10-06 23:08:39',2);
+insert into `user` (user_name,user_pass,real_name,user_sex,user_age,user_mail,reg_date,user_type) values('admin','9fc0a0555e4f857f874da29c9790695cd110cb4e','admin',1,18,'admin@sany.com.cn','2016-10-06 23:08:39',2);
 
 
