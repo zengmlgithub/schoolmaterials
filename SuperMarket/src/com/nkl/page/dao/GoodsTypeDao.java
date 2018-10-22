@@ -4,12 +4,16 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.nkl.page.domain.GoodsType;
 import com.nkl.common.dao.BaseDao;
 import com.nkl.common.util.StringUtil;
 
 public class GoodsTypeDao {
-
+	
+	private static final Logger logger = Logger.getLogger(GoodsTypeDao.class);
+	
 	public int addGoodsType(GoodsType goodsType, Connection conn){
 		String sql = "INSERT INTO goods_type(goods_type_id,goods_type_name) values(null,?)";
 		Object[] params = new Object[] {
@@ -64,6 +68,7 @@ public class GoodsTypeDao {
 		}
 
 		List<Object> list = BaseDao.executeQuery(GoodsType.class.getName(), sBuilder.toString(), null, conn);
+//		_goodsType = new GoodsType();
 		if (list != null && list.size() > 0) {
 			 _goodsType = (GoodsType)list.get(0);
 		}
@@ -89,13 +94,16 @@ public class GoodsTypeDao {
 		}
 
 		List<Object> list = BaseDao.executeQuery(GoodsType.class.getName(), sBuilder.toString(), null, conn);
+		
 		goodsTypes = new ArrayList<GoodsType>();
 		if (list != null && list.size() > 0) {
-			
 			for (Object object : list) {
 				goodsTypes.add((GoodsType)object);
 			}
 		}
+		
+		logger.info("get goodsTypes-->size:" + goodsTypes.size());
+		
 		return goodsTypes;
 	}
 

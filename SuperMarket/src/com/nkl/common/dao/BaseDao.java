@@ -218,7 +218,6 @@ public class BaseDao {
 	 */
 	public static List<Object> executeQuery(String className,String sql, Object[] params,Connection conn)
 	{
-		log.info("executeQuery");	
 		PreparedStatement pstmt=null;
 	    ResultSet rs=null;
 		try 

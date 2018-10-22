@@ -4,12 +4,13 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.nkl.common.dao.BaseDao;
 import com.nkl.common.util.StringUtil;
 import com.nkl.page.domain.Goods;
 
 public class GoodsDao {
-
 	public int addGoods(Goods goods, Connection conn){
 		String sql = "INSERT INTO goods(goods_id,goods_no,goods_name,goods_type_id,goods_price,goods_count,goods_desc) values(null,?,?,?,?,?,?)";
 		Object[] params = new Object[] {
@@ -71,7 +72,7 @@ public class GoodsDao {
 	}
 
 	public Goods getGoods(Goods goods, Connection conn){
-		Goods _goods = new Goods();
+		Goods _goods = null;
 		StringBuilder sBuilder = new StringBuilder();
 		sBuilder.append("SELECT b.*,bt.goods_type_name FROM goods b left join goods_type bt on b.goods_type_id=bt.goods_type_id WHERE 1=1");
 		if (goods.getGoods_id()!=0) {

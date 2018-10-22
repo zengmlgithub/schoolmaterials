@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.nkl.admin.manager.AdminManager;
 import com.nkl.common.action.BaseAction;
 import com.nkl.common.util.DateUtil;
@@ -15,7 +17,6 @@ import com.nkl.page.domain.Sale;
 import com.nkl.page.domain.User;
 
 public class AdminAction  extends BaseAction {
-
 	private static final long serialVersionUID = 1L;
 	AdminManager adminManager = new AdminManager();
 
@@ -210,7 +211,6 @@ public class AdminAction  extends BaseAction {
 			int[] sum={0};
 			//查询商品类型列表
 			List<GoodsType> goodsTypes = adminManager.listGoodsTypes(paramsGoodsType,sum); 
-			
 			Param.setAttribute("goodsTypes", goodsTypes);
 			setTotalCount(sum[0]);
 			
@@ -369,9 +369,10 @@ public class AdminAction  extends BaseAction {
 		//查询商品类型
 		GoodsType goodsType = new GoodsType();
 		goodsType.setStart(-1);
-		List<GoodsType> goodsTypes = adminManager.listGoodsTypes(goodsType, null);
-		Param.setAttribute("goodsTypes", goodsTypes);
 		
+		List<GoodsType> goodsTypes = adminManager.listGoodsTypes(goodsType, null);
+//		Param.setAttribute("goodsTypes", goodsTypes);
+		Param.setSession("goodsTypes", goodsTypes);
 		return "goodsEdit";
 	}
 	

@@ -127,7 +127,7 @@ $(document).ready(function(){
           <td width="35%" align="right" style="padding-right:5px"><font color="red">*</font> 物资类型：</td>
           <td width="65%">
           	<s:select id="paramsGoods.goods_type_id" name="paramsGoods.goods_type_id" value="%{#attr.goods.goods_type_id}" 
-	      		list="#attr.goodsTypes" listKey="goods_type_id" listValue="goods_type_name" 
+	      		list="#session.goodsTypes" listKey="goods_type_id" listValue="goods_type_name" 
 	      		class="selectstyle" cssStyle="width:150px;" headerKey="0" headerValue="请选择">
 	        </s:select>
           </td>

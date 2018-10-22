@@ -20,7 +20,7 @@ import com.nkl.page.domain.Sale;
 import com.nkl.page.domain.User;
 
 public class AdminManager {
-
+	
 	UserDao userDao = new UserDao();
 	GoodsTypeDao goodsTypeDao = new GoodsTypeDao();
 	GoodsDao goodsDao = new GoodsDao();
