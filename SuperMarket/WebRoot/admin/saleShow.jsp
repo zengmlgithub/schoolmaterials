@@ -128,12 +128,14 @@ function ChangePage(pagenum)
      <td width="" align="center">物资编号</td>
      <td width="" align="center">物资名称</td>
      <td width="" align="center">物资类型</td>
+     <td width="" align="center">出库前库存</td>
      <td width="" align="center">出库数量</td>
      <td width="" align="center">登记人</td>
      <td width="" align="center">领用人</td>
      <td width="" align="center">领用人电话</td>
      <td width="" align="center">出库日期</td>
      <td width="" align="center">使用说明</td>
+     
    </tr>
    <s:if test="#attr.sales!=null && #attr.sales.size()>0">
    <s:iterator value="#attr.sales" id="sale" status="status">
@@ -143,6 +145,7 @@ function ChangePage(pagenum)
      <td width="" align="center"><s:property value="#sale.goods_no"/></td>
      <td width="" align="center"><s:property value="#sale.goods_name"/></td>
      <td width="" align="center"><s:property value="#sale.goods_type_name"/></td>
+     <td width="" align="center"><s:property value="#sale.goods_count"/></td>
      <td width="" align="center"><s:property value="#sale.sale_count"/></td>
      <td width="" align="center"><s:property value="#sale.sale_admin"/></td>
      <td width="" align="center"><s:property value="#sale.sale_receiver"/></td>

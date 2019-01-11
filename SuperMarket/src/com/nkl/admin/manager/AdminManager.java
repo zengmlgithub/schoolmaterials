@@ -272,14 +272,19 @@ public class AdminManager {
 	public void addOrders(Orders orders) {
 		Connection conn = BaseDao.getConnection();
 		//添加商品销售
-		ordersDao.addOrders(orders, conn);
+//		ordersDao.addOrders(orders, conn);
 		
 		//更新商品实际库存数量
 		Goods goods = new Goods();
 		goods.setGoods_id(orders.getGoods_id());
 		goods = goodsDao.getGoods(goods, conn);
+		
+		orders.setGoods_count(goods.getGoods_count());
+		
 		goods.setGoods_count(goods.getGoods_count()+orders.getOrders_count());
 		goodsDao.updateGoods(goods, conn);
+		
+		ordersDao.addOrders(orders, conn);
 		
 		BaseDao.closeDB(null, null, conn);
 	}
@@ -353,14 +358,20 @@ public class AdminManager {
 	public void addSale(Sale sale) {
 		Connection conn = BaseDao.getConnection();
 		//添加商品销售
-		saleDao.addSale(sale, conn);
+//		saleDao.addSale(sale, conn);
 		
 		//更新商品实际库存数量
 		Goods goods = new Goods();
 		goods.setGoods_id(sale.getGoods_id());
 		goods = goodsDao.getGoods(goods, conn);
+		
+		sale.setGoods_count(goods.getGoods_count());
+		System.out.println("current_goods_count:" + sale.getGoods_count());
+		
 		goods.setGoods_count(goods.getGoods_count()-sale.getSale_count());
 		goodsDao.updateGoods(goods, conn);
+		
+		saleDao.addSale(sale, conn);
 		
 		BaseDao.closeDB(null, null, conn);
 	}

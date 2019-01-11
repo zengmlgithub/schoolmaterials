@@ -23,6 +23,21 @@ public class Orders extends BaseDomain {
 	
 	private String ids;
 	
+	/**
+	 * modified by zengmaolin
+	 * 
+	 * 增加当前库存量字段
+	 */
+	private int goods_count; //当前库存量
+	
+	public int getGoods_count() {
+		return goods_count;
+	}
+	
+	public void setGoods_count(int goods_count) {
+		this.goods_count = goods_count;
+	}
+	
 	public int getOrders_id() {
 		return orders_id;
 	}

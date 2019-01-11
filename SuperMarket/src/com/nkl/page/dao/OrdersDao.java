@@ -11,12 +11,13 @@ import com.nkl.common.util.StringUtil;
 public class OrdersDao {
 
 	public int addOrders(Orders orders, Connection conn){
-		String sql = "INSERT INTO orders(orders_id,goods_id,orders_count,orders_admin,orders_date) values(null,?,?,?,?)";
+		String sql = "INSERT INTO orders(orders_id,goods_id,orders_count,orders_admin,orders_date,goods_count) values(null,?,?,?,?,?)";
 		Object[] params = new Object[] {
 			orders.getGoods_id(),
 			orders.getOrders_count(),
 			orders.getOrders_admin(),
-			orders.getOrders_date()
+			orders.getOrders_date(),
+			orders.getGoods_count()
 		};
 		return BaseDao.executeUpdate(sql, params, conn );
 	}

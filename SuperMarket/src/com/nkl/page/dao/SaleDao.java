@@ -11,7 +11,7 @@ import com.nkl.common.util.StringUtil;
 public class SaleDao {
 
 	public int addSale(Sale sale, Connection conn){
-		String sql = "INSERT INTO sale(sale_id,goods_id,sale_count,sale_admin,sale_date,sale_receiver,receiver_tel,use_desc) values(null,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO sale(sale_id,goods_id,sale_count,sale_admin,sale_date,sale_receiver,receiver_tel,use_desc,goods_count) values(null,?,?,?,?,?,?,?,?)";
 		Object[] params = new Object[] {
 			sale.getGoods_id(),
 			sale.getSale_count(),
@@ -19,7 +19,8 @@ public class SaleDao {
 			sale.getSale_date(),
 			sale.getSale_receiver(),
 			sale.getReceiver_tel(),
-			sale.getUse_desc()
+			sale.getUse_desc(),
+			sale.getGoods_count()
 		};
 		return BaseDao.executeUpdate(sql, params, conn );
 	}
@@ -111,8 +112,6 @@ public class SaleDao {
 			sBuilder.append(" limit " + sale.getStart() + "," + sale.getLimit());
 		}
 		
-		
-
 		List<Object> list = BaseDao.executeQuery(Sale.class.getName(), sBuilder.toString(), null, conn);
 		if (list != null && list.size() > 0) {
 			sales = new ArrayList<Sale>();

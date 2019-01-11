@@ -35,6 +35,24 @@ public class Sale extends BaseDomain {
 	private String receiver_tel; //领用人电话
 	private String use_desc;//使用描述
 	
+	
+	/**
+	 * modified by zengmaolin
+	 * 2019-01-11
+	 * @return
+	 */
+	
+	private int goods_count; //当前库存量
+	
+	
+	public int getGoods_count() {
+		return goods_count;
+	}
+	
+	public void setGoods_count(int goods_count) {
+		this.goods_count = goods_count;
+	}
+	
 	public String getUse_desc() {
 		return use_desc;
 	}

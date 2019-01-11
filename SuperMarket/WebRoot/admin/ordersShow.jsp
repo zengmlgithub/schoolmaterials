@@ -128,6 +128,8 @@ function ChangePage(pagenum)
      <td width="" align="center">商品编号</td>
      <td width="" align="center">商品名称</td>
      <td width="" align="center">商品类型</td>
+     <td width="" align="center">进货前库存</td>
+     
      <td width="" align="center">进货数量</td>
      <td width="" align="center">进货人</td>
      <td width="" align="center">进货日期</td>
@@ -140,6 +142,7 @@ function ChangePage(pagenum)
      <td width="" align="center"><s:property value="#orders.goods_no"/></td>
      <td width="" align="center"><s:property value="#orders.goods_name"/></td>
      <td width="" align="center"><s:property value="#orders.goods_type_name"/></td>
+      <td width="" align="center"><s:property value="#orders.goods_count"/></td>
      <td width="" align="center"><s:property value="#orders.orders_count"/></td>
      <td width="" align="center"><s:property value="#orders.orders_admin"/></td>
      <td width="" align="center"><s:property value="#orders.orders_date.substring(0,10)"/></td>
