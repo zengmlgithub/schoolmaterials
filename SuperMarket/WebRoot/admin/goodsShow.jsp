@@ -86,6 +86,14 @@ function ChangePage(pagenum)
   document.info.action="Admin_listGoodss.action";
   document.info.submit();
 }
+
+$(document).ready(function(){
+	$("#export").bind('click',function(){
+		var aQuery = $("#info").serialize();  
+		$("#info").attr('action','exportGoodsSum.action').submit();;
+	});
+});
+
 </script>
 </head>
 <body>
@@ -111,6 +119,7 @@ function ChangePage(pagenum)
       <input type="button" value="搜索" onclick="serch();" class="btnstyle"/>&nbsp;
       <input type="button" value="增加" onclick="window.location='Admin_addGoodsShow.action';" class="btnstyle"/> &nbsp;
       <input type="button" value="删除" onclick="del();" class="btnstyle"/>
+       <input type="button" value="导出" id="export" class="btnstyle"/>
     </td>
   </tr>
   <tr><td colspan="2" height="2px"></td></tr>  
