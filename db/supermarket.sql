@@ -55,6 +55,7 @@ CREATE TABLE `orders` (
   `orders_count` int(11) DEFAULT NULL,
   `orders_admin` varchar(50) DEFAULT NULL,
   `orders_date` date DEFAULT NULL,
+  `goods_count` date DEFAULT 0,
   PRIMARY KEY (`orders_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
@@ -73,6 +74,7 @@ CREATE TABLE `sale`  (
   `sale_receiver` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `receiver_tel` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `use_desc` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `goods_count` date DEFAULT 0,
   PRIMARY KEY (`sale_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
