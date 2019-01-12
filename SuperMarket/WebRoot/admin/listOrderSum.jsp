@@ -87,6 +87,14 @@ function ChangePage(pagenum)
   document.info.action="Admin_listOrderss.action";
   document.info.submit();
 }
+
+$(document).ready(function(){
+	$("#export").bind('click',function(){
+		var aQuery = $("#info").serialize();  
+		$("#info").attr('action','exportOrderSum.action').submit();;
+	});
+});
+
 </script>
 </head>
 <body>
@@ -117,6 +125,9 @@ function ChangePage(pagenum)
 					 value="%{#attr.paramsOrders.orders_date_max}" onfocus="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd'})"/>&nbsp;&nbsp;			 
       <input type="button" value="搜索" onclick="serch();" class="btnstyle"/>&nbsp;
       <input type="button" value="删除" onclick="del();" class="btnstyle"/> --%>
+      
+      <input type="button" value="导出" id="export" class="btnstyle"/>
+      
     </td>
   </tr>
   <tr><td colspan="2" height="2px"></td></tr>  

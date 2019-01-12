@@ -7,6 +7,7 @@ import java.util.List;
 import com.nkl.admin.manager.AdminManager;
 import com.nkl.common.action.BaseAction;
 import com.nkl.page.domain.Goods;
+import com.nkl.page.domain.Orders;
 import com.nkl.page.domain.Sale;
 
 public class ExportExcelAction extends BaseAction{
@@ -22,6 +23,8 @@ public class ExportExcelAction extends BaseAction{
 	Goods paramsGoods;
 	HashMap<String,Object> goodsReport = new HashMap<String,Object>();
 	
+	Orders paramsOrder;
+	HashMap<String,Object> orderReport = new HashMap<String,Object>();
 	
 	public Goods getParamsGoods() {
 		return paramsGoods;
@@ -84,6 +87,32 @@ public class ExportExcelAction extends BaseAction{
 			
 			//设置导出文件名
 			setExportExcelName("物资库存信息汇总表.xls");
+		}
+        catch(Exception e){
+            setErrorReason("导出异常，请稍后再试", e);
+            return ERROR;
+        }
+        return SUCCESS; 
+	}
+	
+	/**
+	 * 入库物资汇总excel
+	 * @return
+	 */
+	public String exportOrderSum(){
+		try{
+			if (paramsOrder==null) {
+				paramsOrder = new Orders();
+			}
+			//设置分页信息
+			paramsOrder.setStart(-1);
+			//查询销售汇总
+			List<Orders> orders = adminManager.listOrderss(paramsOrder, null); 
+			
+			goodsReport.put("orders", orders);
+			
+			//设置导出文件名
+			setExportExcelName("入库物资汇总.xls");
 		}
         catch(Exception e){
             setErrorReason("导出异常，请稍后再试", e);
