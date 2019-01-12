@@ -205,6 +205,7 @@ H1 a {
 					<ul class="MM">
 					  <li><a href="Admin_listGoodss.action" target="MainFrame">物资查询</a></li>
 					  <li><a href="Admin_addGoodsShow.action" target="MainFrame">新增物资</a></li>
+					  <li><a href="Admin_listGoodsSum.action" target="MainFrame">库存汇总</a></li>
 					</ul>
 				  </div>
 				  </c:if>

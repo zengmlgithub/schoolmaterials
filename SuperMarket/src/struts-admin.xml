@@ -29,6 +29,7 @@
 	  		<result name="saleShow">saleShow.jsp</result>
 	  		<result name="saleSumShow">saleSumShow.jsp</result>
 	  		<result name="saleEdit">saleEdit.jsp</result>
+	  		<result name="listGoodsSum">listGoodsSum.jsp</result>
 	  	</action>
 	  	
 	  	<action name="export*" class="com.nkl.admin.action.ExportExcelAction" method="export{1}">

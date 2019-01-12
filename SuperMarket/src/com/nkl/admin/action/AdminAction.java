@@ -361,6 +361,38 @@ public class AdminAction  extends BaseAction {
 	}
 	
 	/**
+	 * @Title: listGoodss
+	 * @Description: 查询库存
+	 * @return String
+	 */
+	public String listGoodsSum(){
+		try {
+			if (paramsGoods==null) {
+				paramsGoods = new Goods();
+			}
+			//设置分页信息
+			setPagination(paramsGoods);
+			int[] sum={0};
+			List<Goods> goodss = adminManager.listGoodss(paramsGoods,sum); 
+			
+			Param.setAttribute("goodss", goodss);
+			setTotalCount(sum[0]);
+			
+			//查询商品类型
+			GoodsType goodsType = new GoodsType();
+			goodsType.setStart(-1);
+			List<GoodsType> goodsTypes = adminManager.listGoodsTypes(goodsType, null);
+			Param.setAttribute("goodsTypes", goodsTypes);
+			
+		} catch (Exception e) {
+			setErrorTip("查询商品异常", "main.jsp");
+			return "infoTip";
+		}
+		
+		return "listGoodsSum";
+	}
+	
+	/**
 	 * @Title: addGoodsShow
 	 * @Description: 显示添加商品页面
 	 * @return String
@@ -617,6 +649,42 @@ public class AdminAction  extends BaseAction {
 		
 		return "saleShow";
 	}
+	
+	/**
+	 * 查询库存所有商品
+	 * 
+	 * @author zengmaolin 2019-01-12
+	 *     查询所有商品
+	 * @return
+	 */
+//	public String listGoodsSum(){
+//		try {
+//			if (paramsGoods==null) {
+//				paramsGoods = new Goods();
+//			}
+//			//设置分页信息
+//			setPagination(paramsGoods);
+//			//总的条数
+//			int[] sum={0};
+//			//查询商品销售列表
+//			List<Goods> sales = adminManager.listGoodss(paramsGoods, sum); 
+//			
+//			Param.setAttribute("goodss", sales);
+//			setTotalCount(sum[0]);
+//			
+//			//查询商品类型
+//			GoodsType goodsType = new GoodsType();
+//			goodsType.setStart(-1);
+//			List<GoodsType> goodsTypes = adminManager.listGoodsTypes(goodsType, null);
+//			Param.setAttribute("goodsTypes", goodsTypes);
+//			
+//		} catch (Exception e) {
+//			setErrorTip("查询商品销售异常", "main.jsp");
+//			return "infoTip";
+//		}
+//		
+//		return "goodsShow";
+//	}
 	
 	/**
 	 * @Title: listSalesSum

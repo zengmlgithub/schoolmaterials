@@ -87,12 +87,12 @@ function ChangePage(pagenum)
   document.info.submit();
 }
 
-/* $(document).ready(function(){
+$(document).ready(function(){
 	$("#export").bind('click',function(){
 		var aQuery = $("#info").serialize();  
 		$("#info").attr('action','exportGoodsSum.action').submit();;
 	});
-}); */
+});
 
 </script>
 </head>
@@ -107,7 +107,7 @@ function ChangePage(pagenum)
   <tr>
     <td width="">物资列表</td>
     <td width="" align="right">
-            物资编号：
+<%--             物资编号：
       <input type="text" id="paramsGoods.goods_no" name="paramsGoods.goods_no" value="${paramsGoods.goods_no}" class="inputstyle" Style="width:100px;"/>&nbsp;
             物资名称：
       <input type="text" id="paramsGoods.goods_name" name="paramsGoods.goods_name" value="${paramsGoods.goods_name}" class="inputstyle" Style="width:100px;"/>&nbsp;
@@ -118,8 +118,8 @@ function ChangePage(pagenum)
       </s:select>&nbsp;&nbsp;
       <input type="button" value="搜索" onclick="serch();" class="btnstyle"/>&nbsp;
       <input type="button" value="增加" onclick="window.location='Admin_addGoodsShow.action';" class="btnstyle"/> &nbsp;
-      <input type="button" value="删除" onclick="del();" class="btnstyle"/>
-      <!--  <input type="button" value="导出" id="export" class="btnstyle"/> -->
+      <input type="button" value="删除" onclick="del();" class="btnstyle"/> --%>
+       <input type="button" value="导出" id="export" class="btnstyle"/>
     </td>
   </tr>
   <tr><td colspan="2" height="2px"></td></tr>  
@@ -133,7 +133,7 @@ function ChangePage(pagenum)
      <td width="" align="center">物资类型</td>
      <td width="" align="center">物资价格</td>
      <td width="" align="center">库存数量</td>
-     <td width="" align="center">操作</td>
+     <!-- <td width="" align="center">操作</td> -->
    </tr>
    <s:if test="#attr.goodss!=null && #attr.goodss.size()>0">
    <s:iterator value="#attr.goodss" id="goods" status="status">
@@ -145,9 +145,9 @@ function ChangePage(pagenum)
      <td width="" align="center"><s:property value="#goods.goods_type_name"/></td>
      <td width="" align="center">￥<s:property value="#goods.goods_price"/></td>
      <td width="" align="center"><s:property value="#goods.goods_count"/></td>
-     <td width="" align="center">
+   <%--   <td width="" align="center">
        <s:a href="Admin_editGoods.action?paramsGoods.goods_id=%{#goods.goods_id}">编辑</s:a>
-     </td>
+     </td> --%>
    </tr> 
    </s:iterator>
    </s:if>
