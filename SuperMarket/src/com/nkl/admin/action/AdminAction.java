@@ -393,6 +393,40 @@ public class AdminAction  extends BaseAction {
 	}
 	
 	/**
+	 * 出库物资汇总
+	 * @return
+	 */
+	public String listOrdersSum(){
+		try {
+			if (paramsOrders==null) {
+				paramsOrders = new Orders();
+			}
+			//设置分页信息
+			setPagination(paramsOrders);
+			//总的条数
+			int[] sum={0};
+			//查询商品进货列表
+			List<Orders> orderss = adminManager.listOrderss(paramsOrders,sum); 
+			
+			Param.setAttribute("orderss", orderss);
+			setTotalCount(sum[0]);
+			
+			//查询商品类型
+			GoodsType goodsType = new GoodsType();
+			goodsType.setStart(-1);
+			List<GoodsType> goodsTypes = adminManager.listGoodsTypes(goodsType, null);
+			Param.setAttribute("goodsTypes", goodsTypes);
+			
+		} catch (Exception e) {
+			setErrorTip("查询商品进货异常", "main.jsp");
+			return "infoTip";
+		}
+		
+		return "listOrdersSum";
+	}
+	
+	
+	/**
 	 * @Title: addGoodsShow
 	 * @Description: 显示添加商品页面
 	 * @return String

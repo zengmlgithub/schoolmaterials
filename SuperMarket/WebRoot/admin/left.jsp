@@ -219,6 +219,7 @@ H1 a {
 					<ul class="MM">
 					  <li><a href="Admin_listOrderss.action" target="MainFrame">入库物资查询</a></li>
 					  <li><a href="Admin_addOrdersShow.action" target="MainFrame">新增入库物资</a></li>
+					  <li><a href="Admin_listOrdersSum.action" target="MainFrame">入库物资汇总</a></li>
 					</ul>
 				  </div>
 				  <h1 class="type"><a href="javascript:void(0)">出库物资管理</a></h1>
