@@ -1,13 +1,16 @@
 package com.nkl.admin.action;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.lang.time.DateUtils;
 import org.apache.log4j.Logger;
 
 import com.nkl.admin.manager.AdminManager;
 import com.nkl.common.action.BaseAction;
+import com.nkl.common.util.DataUtils;
 import com.nkl.common.util.DateUtil;
 import com.nkl.common.util.Param;
 import com.nkl.page.domain.Goods;
@@ -439,9 +442,41 @@ public class AdminAction  extends BaseAction {
 		List<GoodsType> goodsTypes = adminManager.listGoodsTypes(goodsType, null);
 //		Param.setAttribute("goodsTypes", goodsTypes);
 		Param.setSession("goodsTypes", goodsTypes);
+		
+		/**
+		 * added by zengmaolin
+		 *   自动生成goods的goods_no
+		 */
+		
+		//-------------start---------------
+		Object goods = Param.getAttribute("goods");
+		/**
+		 * 
+		 */
+		Goods g;
+		if(goods != null) {
+			g = (Goods)goods;
+			String goodsNo = g.getGoods_no();
+//			if(goodsNo == null || "".equals(goodsNo)) {
+				
+//			}
+		}else {
+			g = new Goods();
+		
+		}
+		
+		String newGoodsNo = DataUtils.getDateString();
+		g.setGoods_no(newGoodsNo);
+		
+		Param.setAttribute("goods", g);
+		
+		//-------------start---------------
+		
 		return "goodsEdit";
 	}
 	
+	
+
 	/**
 	 * @Title: addGoods
 	 * @Description: 添加商品
