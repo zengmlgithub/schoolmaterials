@@ -17,6 +17,7 @@ public class DataUtils {
 		
 		String hour = getStr(cal.get(Calendar.HOUR_OF_DAY));
 		String minute = getStr(cal.get(Calendar.MINUTE));
+		String seconds = getStr(cal.get(Calendar.SECOND));
 		String millsecondStr = getStr(cal.get(Calendar.MILLISECOND));
 		
 		no += yearStr;
@@ -24,7 +25,8 @@ public class DataUtils {
 		no += dayStr;
 		no += hour;
 		no += minute;
-		no += millsecondStr;
+		no += seconds;
+		no += ("_" +millsecondStr);
 		
 		log.info("create no:" + no);
 		return no;
